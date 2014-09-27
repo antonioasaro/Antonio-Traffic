@@ -26,20 +26,13 @@
 
 /*************************************************/
 function process_traffic($json_in) {
-    $json_out = json_decode($json_in, true);
+    $json_out = json_decode($json_in);
     if (!$json_out) die(); 
 //print $json_in;
-var_dump($json_out);
+    $distance = $json_out->routes[0]->legs[0]->distance->text;
+print $duration;
 
     $result = "abc";
-/*    $traffic     = $json_out->traffic;
-    $temp        = $json_out->main->temp;
-    $icon        = $traffic[0]->icon;
-
-    $result    = array();
-    $result[1] = $icon;
-    $result[2] = array('I', round($temp, 0));
-*/
     return $result;
 }
 
