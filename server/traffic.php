@@ -8,12 +8,8 @@
   $frm = "pebble@traffic.php";
   $hdr = "From: ".$frm;
 
-  print "try json";
-  $json  = file_get_contents('https://maps.googleapis.com/maps/api/directions/json?origin=10+Fawnridge+Trail,+Scarborough&destination=1+commerce+valley+dr+markham&units=metric');
-  print "process json";
-//  $traffic = process_traffic($json);
-print "done processing json";
-//  print json_encode($traffic);
+  $json  = file_get_contents('https://maps.googleapis.com/maps/api/directions/json?origin=10+Fawnridge+Trail,+Scarborough&destination=1+commerce+valley+dr+markham&units=metric', 0, null, null);
+  $traffic = process_traffic($json);
 
   $sentOK = 0;
   if (strcmp($cmd, "send") == 0) {
@@ -29,29 +25,15 @@ print "done processing json";
 
 
 /*************************************************/
-function curl_get($url){
-    if (!function_exists('curl_init')){
-        die('Sorry cURL is not installed!');
-    }
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_REFERER, $url);
-    curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/1.0");
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-    $output = curl_exec($ch);
-    curl_close($ch);
-    return $output;
-}
-
 function process_traffic($json_in) {
-    $json_output = json_decode(utf8_decode($json_in));
-    if (!$json_output) die(); 
+    $json_out = json_decode($json_in, true);
+    if (!$json_out) die(); 
+//print $json_in;
+var_dump($json_out);
 
     $result = "abc";
-/*    $traffic     = $json_output->traffic;
-    $temp        = $json_output->main->temp;
+/*    $traffic     = $json_out->traffic;
+    $temp        = $json_out->main->temp;
     $icon        = $traffic[0]->icon;
 
     $result    = array();
