@@ -1,7 +1,7 @@
 <?PHP
 
-  $cmd = 'test';
-  $num = '4165621384';
+  $cmd = 'send';
+  $num = '4165621384@sms.rogers.com';
   $msg = '';
   
   $sub = "Traffic to work";
