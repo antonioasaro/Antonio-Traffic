@@ -17,6 +17,7 @@
   $json = file_get_contents('http://www.mapquestapi.com/directions/v2/route?key=Fmjtd%7Cluurnu6bnd%2Cr5%3Do5-9wbggr&outFormat=json&routeType=fastest&timeType=1&locale=en_US&unit=k&from=43.882876,-79.182163&to=43.839313,-79.379755', 0, null, null);
   $traffic = process_traffic($json);
   $msg = $msg . "; Hwy 407: " .  ($waypoint[0]+$traffic[0]) . " km - " . ($waypoint[1]+$traffic[1]) . " mins.";
+  $msg = $msg . "                                                         ";
 
   $sentOK = 0;
   if (strcmp($cmd, "send") == 0) {
