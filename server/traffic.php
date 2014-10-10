@@ -20,11 +20,14 @@
   $msg = $msg . "                                                         ";
 
   $sentOK = 0;
-  if (strcmp($cmd, "send") == 0) {
+  $d = date("D");
+  if (($d=="Mon") || ($d=="Tue") || ($d=="Wed") || ($d=="Thu") || ($d=="Fri")) {
+    if (strcmp($cmd, "send") == 0) {
       if (mail($num, $sub, $msg, $hdr)) { $sentOK = 1; }
-  } else {
+    } else {
       if (strcmp($cmd, "test") == 0) {
         print "<b>To:</b> ".$num."<br><b>From:</b> ".$frm."<br><b>Subject:</b> ".$sub."<br><b>Msg:</b> ".$msg."<br><br>";
+      }
     }
   }
   $result[1] = array();
