@@ -1,0 +1,23 @@
+Application Registered!
+
+Your API keys are:
+
+Map Kit
+
+Key: aj24kqbts7s8mjyzprchb99g
+
+Application: Traffic to work/home Key: aj24kqbts7s8mjyzprchb99g Shared Secret: 42y7Kbd Status: waiting Registered: 7 seconds ago
+Key Rate Limits
+900	Calls per second
+10,000	Calls per day
+Online Routing
+
+Key: ya7xukdn8cdsyzppnv2ertav
+
+Application: Traffic to work/home Key: ya7xukdn8cdsyzppnv2ertav Status: active Registered: 7 seconds ago
+Key Rate Limits
+5	Calls per second
+1,000	Calls per day
+You will receive this information via email, and you will also be able to access your keys through your "my account" area.
+
+To get started using your API keys, dig into our documentation and feel free to ask questions in our forum. We look forward to seeing what you create!
